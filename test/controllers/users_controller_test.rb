@@ -59,8 +59,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
-  
-  test "should redirect destroy when logged in as non-admin" do
+
+  test "should redirect destroy when logged in as a non-admin" do
     log_in_as(@other_user)
     assert_no_difference 'User.count' do
       delete user_path(@user)
